@@ -9,6 +9,7 @@ class Xdmf < Formula
   depends_on "homebrew/science/hdf5"
   depends_on "libtiff"
 
+  # https://gitlab.kitware.com/xdmf/xdmf/merge_requests/24
   patch :DATA
 
   def install
