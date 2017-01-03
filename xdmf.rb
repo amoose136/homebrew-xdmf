@@ -20,6 +20,7 @@ class Xdmf < Formula
       system "make", "install"
     end
     (lib/"python2.7/site-packages").install Dir[lib/"python/*"]
+    (lib/"python3.5/site-packages").install Dir[lib/"python/*"]
   end
 
   test do
