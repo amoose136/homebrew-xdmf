@@ -11,6 +11,12 @@ class Xdmf < Formula
 
   # https://gitlab.kitware.com/xdmf/xdmf/merge_requests/24
   patch :DATA
+  # A patch to make xdmf python3 compatible
+  patch do
+    url "https://sources.debian.net/data/main/x/xdmf/3.0+git20160803-2/debian/patches/python3.patch"
+    sha256 "a3d07d0fdffd0bdaa4afc1a683071fb64385f65c6662163cf2096c2b059e71a5"
+  end
+  puts "I did a thing"
 
   def install
     ENV["XDMF_INSTALL_DIR"] = prefix
@@ -24,6 +30,7 @@ class Xdmf < Formula
 
   test do
     system "python", "-c", "import Xdmf"
+    system "echo","test"
   end
 end
 __END__
